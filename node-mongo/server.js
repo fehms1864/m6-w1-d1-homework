@@ -7,6 +7,12 @@ require('./app/models/inventory.model.js');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+const cors = require('cors');
+
+app.use(cors());
+
+app.use(express.json());
+
 //Connecting to the database
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
